@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 //@RestController
@@ -15,9 +16,21 @@ class ComarcaController (private val comarcaRepository: ComarcaRepository) {
 //    @GetMapping
 //    fun obtenerComarcas(): List<comarca> = comarcaRepository.findAll()
 
-    @GetMapping
-    fun listarComarcas(model: Model): String {
-        val comarcas = comarcaRepository.findAll()
+//    @GetMapping
+//    fun listarComarcas(model: Model): String {
+//        val comarcas = comarcaRepository.findAll()
+//        model.addAttribute("comarcas", comarcas)
+//        return "/vistas/comarcas"
+//    }
+
+//    @GetMapping("/buscar")
+//    fun buscarComarcasPorProvincia(@RequestParam provincia: String): List<comarca> {
+//        return comarcaRepository.findComarcasPorProvincia(provincia)
+//    }
+
+    @GetMapping("/buscar")
+    fun buscarComarcasPorProvincia(@RequestParam provincia: String, model: Model): String {
+        val comarcas = comarcaRepository.findComarcasPorProvincia(provincia)
         model.addAttribute("comarcas", comarcas)
         return "/vistas/comarcas"
     }
