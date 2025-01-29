@@ -19,6 +19,6 @@ class ComarcaController (private val comarcaRepository: ComarcaRepository) {
     fun listarComarcas(model: Model): String {
         val comarcas = comarcaRepository.findAll()
         model.addAttribute("comarcas", comarcas)
-        return "comarcas"
+        return "/vistas/comarcas"
     }
 }
