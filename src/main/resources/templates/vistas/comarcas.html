@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <title>Lista de Comarcas</title>
+  </head>
+  <body>
+  <h1>Lista de Comarcas</h1>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>Provincia</th>
+      </tr>
+      <tr th:each="comarca: ${comarcas}">
+        <td th:text="${comarca.nom_c}">ID</td>
+        <td th:text="${comarca.provincia}">Provincia</td>
+      </tr>
+    </table>
+  </body>
+</html>
