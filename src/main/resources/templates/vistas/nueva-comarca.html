@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nueva comarca</title>
+</head>
+<body>
+    <h1>Nueva comarca</h1>
+    <form th:action="@{/comarcas/nueva}" th:object="${comarca}" method="post">
+        <label for="nom_c">Nombre:</label>
+        <input type="text" id="nom_c" name="nom_c" th:value="*{nom_c}" required><br>
+
+        <label for="provincia">Provincia:</label>
+        <input type="text" id="provincia" name="provincia" th:value="*{provincia}" required><br>
+
+        <button type="submit">Guardar</button>
+    </form>
+</body>
+</html>

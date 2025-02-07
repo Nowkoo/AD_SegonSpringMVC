@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Editar comarca</title>
+</head>
+<body>
+<h1>Editar comarca</h1>
+<form th:action="@{/comarcas/editar/{id}(id=${comarca.nom_c})}" th:object="${comarca}" method="post">
+  <label for="nom_c">Nombre:</label>
+  <input type="text" id="nom_c" name="nom_c" th:value="*{comarca.nom_c}" required><br>
+
+  <label for="provincia">Provincia:</label>
+  <input type="text" id="provincia" name="provincia" th:value="*{comarca.provincia}" required><br>
+
+  <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
